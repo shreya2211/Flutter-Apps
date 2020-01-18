@@ -1,4 +1,4 @@
-# magic_8_ball
+# magic8
 
 A new Flutter project.
 

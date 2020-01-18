@@ -1,4 +1,4 @@
-package com.example.magic_8_ball
+package com.example.magic8
 
 import androidx.annotation.NonNull;
 import io.flutter.embedding.android.FlutterActivity
