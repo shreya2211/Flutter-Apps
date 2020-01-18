@@ -3,9 +3,9 @@ import 'dart:math';
 
 void main() => runApp(MaterialApp(
       home: Scaffold(
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.pink[800],
         appBar: AppBar(
-          backgroundColor: Colors.red,
+          backgroundColor: Colors.pink[900],
           title: Text('Dicee'),
           centerTitle: true,
         ),
@@ -18,9 +18,18 @@ class DiceApp extends StatefulWidget {
   _State createState() => _State();
 }
 
+
+
 class _State extends State<DiceApp> {
   int leftnumber = 1;
     int rightnum = 1;
+    void change()
+{
+  setState(() {
+    rightnum=Random().nextInt(6)+1;
+    leftnumber=Random().nextInt(6)+1;
+  }); 
+}
   @override
   Widget build(BuildContext context) {
     
@@ -30,10 +39,7 @@ class _State extends State<DiceApp> {
           Expanded(
             child: FlatButton(
               onPressed: () {
-                setState(() {
-                  leftnumber = Random().nextInt(6) + 1;
-                  
-                });
+                change();
                 print('left buttonnn');
               },
               child: Image.asset('image/dice-six-faces$leftnumber.png'),
@@ -42,9 +48,7 @@ class _State extends State<DiceApp> {
           Expanded(
             child: FlatButton(
               onPressed: () {
-                setState(() {
-                  rightnum = Random().nextInt(6) + 1;
-                });
+               change();
                 print('right butttttonnnnn $rightnum');
               },
               child: Image.asset('image/dice-six-faces$rightnum.png'),
